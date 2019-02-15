@@ -1,4 +1,4 @@
-# Temperature Converter
+# Temperature Converter [![Build Status](https://travis-ci.org/Outc4sted/Temperature-Converter.svg?branch=master)](https://travis-ci.org/Outc4sted/Temperature-Converter)
 Homework app that converts temperatures and checks student answers. Uses React, contains tests, integrated with TravisCI.
 
 ![Temp Converter preview](https://i.imgur.com/ngwU4Tb.png)

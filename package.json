@@ -1,5 +1,6 @@
 {
   "name": "temp-converter",
+  "homepage": "https://outc4sted.github.io/Temperature-Converter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
