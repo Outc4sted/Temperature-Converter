@@ -56,15 +56,16 @@ class App extends Component {
   }
 
   convertTemperature = (temperature, tempScaleSource, tempScaleTarget) => {
+    temperature = Number(temperature);
     if (tempScaleSource !== tempScaleTarget) {
-      let index = conversions.findIndex(c => Object.getOwnPropertyNames(c).find(k => k === 'type' && c[k][0] === tempScaleSource));
+      let convIndex = conversions.findIndex(c => Object.getOwnPropertyNames(c).find(k => k === 'type' && c[k][0] === tempScaleSource));
       const endingConvIndex = conversions.findIndex(c => Object.getOwnPropertyNames(c).find(k => k === 'type' && c[k][k.length-1] === tempScaleTarget));
 
       do {
-        index = index === conversions.length ? 0 : index
-        temperature = conversions[index].convert(temperature);
+        convIndex = convIndex === conversions.length ? 0 : convIndex
+        temperature = conversions[convIndex].convert(temperature);
       }
-      while(endingConvIndex !== index++)
+      while(endingConvIndex !== convIndex++)
     }
 
     return this.round(temperature);

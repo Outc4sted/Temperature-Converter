@@ -124,8 +124,13 @@ describe('<App />', () => {
     describe('App.convertTemperature(temperature, tempScaleSource, tempScaleTarget)', () => {
       it('should return the rounded initial temperature if both scales are the same', () => {
         const result = wrap.instance().convertTemperature(42.1, 'F', 'F');
-
         expect(result).toEqual(42);
+      });
+
+      it('should convert from Fahrenheit to Celsius with a string', () => {
+        const result = wrap.instance().convertTemperature('100', 'C', 'F');
+        expect(result).toEqual(212);
+        console.log('ok');
       });
 
       it('should convert from Fahrenheit to Celsius', () => {
